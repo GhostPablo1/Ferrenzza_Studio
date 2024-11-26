@@ -1,0 +1,13 @@
+*,*:before, *:after{
+    box-sizing: inherit;
+    }
+
+/*tipo de scrollbar*/
+body::-webkit-scrollbar {
+  width: 8px;
+  background: white;
+  }
+body::-webkit-scrollbar-thumb {
+  background: black;
+  border-radius: 25px;
+}
