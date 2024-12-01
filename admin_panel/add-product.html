@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Product - Admin</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <aside>
+            <!-- Sidebar from the original dashboard (copy the sidebar section) -->
+            <div class="sidebar">
+                <a href="index.html">
+                    <span class="material-symbols-sharp">grid_view</span>
+                    <h3>Dashboard</h3>
+                </a>
+                <a href="add-product.html" class="active">
+                    <span class="material-symbols-sharp">add</span>
+                    <h3>Add Product</h3>
+                </a>
+                <a href="products.html">
+                    <span class="material-symbols-sharp">receipt_long</span>
+                    <h3>Products</h3>
+                </a>
+            </div>
+        </aside>
+
+        <main>
+            <h1>Add New Product</h1>
+            <form id="add-product-form">
+                <div>
+                    <label for="product-name">Product Name:</label>
+                    <input type="text" id="product-name" required>
+                </div>
+                <div>
+                    <label for="product-price">Price:</label>
+                    <input type="number" id="product-price" step="0.01" required>
+                </div>
+                <div>
+                    <label for="product-image">Product Image:</label>
+                    <input type="file" id="product-image" accept="image/*" required>
+                </div>
+                <div>
+                    <label for="product-description">Description:</label>
+                    <textarea id="product-description"></textarea>
+                </div>
+                <button type="submit">Add Product</button>
+            </form>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,100 +1,188 @@
-/* Auth Styles */
-.auth-container {
-    min-height: 100vh;
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+    box-sizing: border-box;
+}
+
+body {
     display: flex;
-    align-items: center;
     justify-content: center;
-    background-color: #f3f4f6;
-    padding: 1rem;
+    align-items: center;
+    min-height: 100vh;
+    background: url("/imagenes/negroxd.jpg") no-repeat center center fixed;
+    background-size: cover;
 }
 
-.auth-box {
-    background-color: white;
-    padding: 2rem;
-    border-radius: 0.5rem;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+section {
     width: 100%;
-    max-width: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.auth-box h2 {
+.form-box {
+    position: relative;
+    width: 400px;
+    padding: 40px;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 20px;
+    backdrop-filter: blur(20px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.form-value {
+    width: 100%;
+}
+
+h2 {
+    font-size: 2em;
+    color: #fff;
     text-align: center;
-    color: #1f2937;
-    margin-bottom: 1.5rem;
-    font-size: 1.5rem;
+    margin-bottom: 30px;
 }
 
-.auth-form {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
+.inputbox {
+    position: relative;
+    margin: 30px 0;
+    width: 100%;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.5);
 }
 
-.form-group {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
+.inputbox label {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    color: #fff;
+    font-size: 1em;
+    pointer-events: none;
+    transition: 0.5s;
 }
 
-.form-group label {
-    color: #4b5563;
-    font-size: 0.875rem;
-}
-
-.form-group input {
-    padding: 0.5rem;
-    border: 1px solid #d1d5db;
-    border-radius: 0.375rem;
-    font-size: 1rem;
-}
-
-.form-group input:focus {
-    outline: none;
-    border-color: #60a5fa;
-    box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.2);
-}
-
-.auth-button {
-    background-color: #1f2937;
-    color: white;
-    padding: 0.75rem;
+.inputbox input {
+    width: 100%;
+    height: 50px;
+    background: transparent;
     border: none;
-    border-radius: 0.375rem;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background-color 0.3s;
+    outline: none;
+    font-size: 1em;
+    padding: 0 35px 0 5px;
+    color: #fff;
 }
 
-.auth-button:hover {
-    background-color: #374151;
+.inputbox input:focus ~ label,
+.inputbox input:valid ~ label {
+    top: -10px;
+    font-size: 0.8em;
+    color: #4db8ff;
 }
 
-.auth-links {
+.inputbox ion-icon {
+    position: absolute;
+    right: 8px;
+    color: #fff;
+    font-size: 1.2em;
+    top: 20px;
+    transition: color 0.3s;
+}
+
+.inputbox input:focus ~ ion-icon {
+    color: #4db8ff;
+}
+
+.forget {
     display: flex;
     justify-content: space-between;
-    font-size: 0.875rem;
-    margin-top: 1rem;
+    margin: 10px 0 20px;
+    font-size: 0.9em;
+    color: #fff;
 }
 
-.small-link {
-    color: #60a5fa;
+.forget label {
+    display: flex;
+    align-items: center;
+}
+
+.forget label input[type="checkbox"] {
+    margin-right: 6px;
+}
+
+.forget label a {
+    color: #fff;
     text-decoration: none;
+    transition: color 0.3s;
 }
 
-.small-link:hover {
+.forget label a:hover {
+    color: #6d7173;
+    text-decoration: underline;
+}
+
+button {
+    width: 100%;
+    height: 45px;
+    border-radius: 40px;
+    background: #000080;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 600;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+button:hover {
+    background-color: #6d7173;
+    transform: scale(1.02);
+}
+
+.register {
+    font-size: 0.9em;
+    color: #fff;
+    text-align: center;
+    margin: 25px 0 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.register a, .back-link {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.register a:hover, .back-link:hover {
+    color: #6d7173;
     text-decoration: underline;
 }
 
 .back-link {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    color: #4b5563;
-    text-decoration: none;
-    font-size: 0.875rem;
-    margin-top: 2rem;
+    display: block;
+    text-align: center;
+    margin-top: 15px;
+    font-size: 0.9em;
 }
 
-.back-link:hover {
-    color: #1f2937;
+.back-link i {
+    margin-right: 5px;
+}
+
+/* Small screen responsiveness */
+@media screen and (max-width: 480px) {
+    .form-box {
+        width: 90%;
+        padding: 20px;
+    }
+
+    .inputbox {
+        margin: 20px 0;
+    }
 }

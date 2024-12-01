@@ -21,6 +21,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
+
     // Funcionalidad del carrusel de imágenes
     const track = document.querySelector('.carousel-track');
     const prevBtn = document.querySelector('.prev-btn');
@@ -64,6 +65,7 @@ document.addEventListener('DOMContentLoaded', function () {
             }, 500);
         }
     });
+    
     
 
     prevBtn.addEventListener('click', () => {

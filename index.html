@@ -14,16 +14,41 @@
         <button id="menu-toggle" class="menu-btn">
             <i class="fas fa-bars"></i>
         </button>
+        
         <nav class="nav-bar">
-            <a href="tienda.html">Tienda</a>
-            <a href="promos.html">Promos</a>
-            <a href="proximamente.html">Próximamente</a>
+            <ul>
+                <li>
+                    <a href="#" class="logo">
+                        <img src="/imagenes/LOGO.ico" alt="Logo">
+                    </a>
+                </li>
+                <li><a href="#" class="link">Productos</a></li>
+                <li><a href="#" class="link">Promos</a></li>
+                <li><a href="#" class="link">Proximamente</a></li>
+            </ul>
         </nav>
+    
+        <div class="search-box">
+            <div class="row">
+                <input type="text" class="search-bar" 
+                       placeholder="Buscar producto..." 
+                       autocomplete="off"
+                >
+                <button>
+                    <img src="/svg/busqueda.svg" alt="Buscar">
+                </button>
+            </div>
+            <div class="results"></div>
+        </div>
+    
         <div class="user-options">
-            <a href="/account_session/login.html" class="login">Iniciar Sesión</a>
-            <a href="#" class="cart">$0.00</a>
+            <a href="/account_session/login.html" class="login">
+                <img src="/imagenes/user.png" alt="Usuario">
+            </a>
         </div>
     </header>
+
+
     <!-- Modal de imagenes de productos -->
     <main>
         <section class="product-carousel">
@@ -46,10 +71,57 @@
                     <i class="fas fa-chevron-right"></i>
                 </button>
             </div>
-        </section>Z
+        </section>
+        <div class="image-frames">
+            <div class="frame">
+              <img src="/imagenes/Designer.jpeg" alt="Polos">
+              <div class="text-overlay">Polos</div>
+            </div>
+            <div class="frame">
+              <img src="/imagenes/Designer.jpeg" alt="Pants">
+              <div class="text-overlay">Pants</div>
+            </div>
+            <div class="frame">
+              <img src="/imagenes/Designer.jpeg" alt="Imagen 3">
+              <div class="text-overlay">Texto 3</div>
+            </div>
+            <div class="frame">
+              <img src="/imagenes/Designer.jpeg" alt="Imagen 4">
+              <div class="text-overlay">Texto 4</div>
+            </div>
+          </div>
+        
     </main>
     
-    
+    <div class="recommended-items">
+        <h2>Top de polos</h2>
+        <div class="item-container">
+          <div class="item">
+            <img src="polo1.jpg" alt="Easy Polo Black Edition">
+            <div class="item-info">
+              <h3>Polo Oversize</h3>
+              <p>$56</p>
+              <button class="add-to-cart">Agregar al carrito</button>
+            </div>
+          </div>
+          <div class="item">
+            <img src="polo2.jpg" alt="Easy Polo Black Edition">
+            <div class="item-info">
+              <h3>Polos Boxy Fit</h3>
+              <p>$56</p>
+              <button class="add-to-cart">Agregar al carrito</button>
+            </div>
+          </div>
+          <div class="item">
+            <img src="polo3.jpg" alt="Easy Polo Black Edition">
+            <div class="item-info">
+              <h3>Easy Polo Black Edition</h3>
+              <p>$56</p>
+              <button class="add-to-cart">Add to cart</button>
+            </div>
+          </div>
+        </div>
+      </div>
 
     <!-- Modal de Menú -->
     <div id="modal-menu" class="modal">
@@ -75,55 +147,60 @@
     </div>
 
     <footer class="footer">
-
         <div class="footer-content">
-            <div class="footer-section">
-                <h3>Contacto</h3>
-                <p>
-                    <a href="https://mail.google.com/mail/?view=cm&to=ferrenzza@gmail.com" target="_blank">ferrenzza@gmail.com</a>
-                </p>
-                <p>
-                    <a href="https://wa.me/51918961454" target="_blank">+51 918 961 454</a>
-                </p>
+          <div class="footer-section">
+            <h3>Horario</h3>
+            <div class="schedule-container">
+              <div class="schedule-item">
+                <h4>Lunes a Viernes</h4>
+                <p>9:00 am - 7:00 pm</p>
+              </div>
+              <div class="schedule-item">
+                <h4>Sábado</h4>
+                <p>10:00 am - 6:00 pm</p>
+              </div>
             </div>
-            <div class="footer-section">
-                <h3>Síguenos</h3>
-                <div class="footer-social">
-                    <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
-                    <a href="https://www.instagram.com/ferrenzza_studios/" target="_blank"><i class="fab fa-instagram"></i></a>
-                    <a href="#" target="_blank"><i class="fab fa-tiktok"></i></a>
-                </div>
-            </div>
-            <div class="footer-section">
-                <h3>Horario</h3>
-                <p>Lunes a Viernes: 9:00 - 18:00</p>
-                <p>Sábado: 10:00 - 14:00</p>
-            </div>
-            <div class="footer-section">
-                <h3>Ayuda</h3>
-                <p>
-                    <a href="#">Servicio al cliente</a>
-                </p>
-                <p>
-                    <a href="#">Mi cuenta</a>
-                </p>
-                <p>
-                    <a href="#">Terminos y condiciones</a>
-                </p>
-                <p>
-                    <a href="#">Contacto</a>
-                </p>
-                <p>
-                    <a href="#">Libro de reclamaciones</a>
-                </p>
-            </div>
+          </div>
+      
+          <div class="footer-section">
+            <h3>Ayuda</h3>
+            <ul>
+              <li><a href="#">Servicio al cliente</a></li>
+              <li><a href="#">Mi cuenta</a></li>
+              <li><a href="#">Termino y condiciones</a></li>
+            </ul>
+          </div>
+      
+          <div class="footer-section">
+            <h3>Contactos</h3>
+            <ul class="wrapper">
+              <li class="icon facebook">
+                <span class="tooltip">Facebook</span>
+                <span><i class="fab fa-facebook-f"></i></span>
+              </li>
+              <li class="icon instagram">
+                <span class="tooltip">Instagram</span>
+                <span><i class="fab fa-instagram"></i></span>
+              </li>
+              <li class="icon tiktok">
+                <span class="tooltip">Tik Tok</span>
+                <span><i class="fab fa-tiktok"></i></span>
+              </li>
+            </ul>
+          </div>
+      
+          <div class="footer-section">
+            <h3>Términos y Condiciones</h3>
+            <ul>
+              <li><a href="#"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFAAAABQCAYAAACOEfKtAAAACXBIWXMAAAsTAAALEwEAmpwYAAAB+ElEQVR4nO2bTUoDQRCFx517CcTD6NplFuoVxL16GE+gJ9CVgiGnUDdxK4ph5pUL5cmMP4iaGO1M/837oGFIJ+nKx0x1F6GKQgghhBBCCCGEEEJEBs3ocdwROCGw9rE+sE7glMC9z1hSFchmAE8026HZLoHnEDEsXODCvnAGLMtVAvsEHhuJr6O+3qvnCg8kLfAdAgef7sa9wiN5CCzL/ofAsux7Xdvl99Jsg2Y3reaEyJmSE8e1m3k+PG49qUbOjI1lPPeHf3vNBzQb0WwYYN3/O4hM4JBmFwHWzUNgKCQwJYFs8cT/Ww5sa+2cBA5n5cAsBOaIBDqSjUDqHOhGJ86BXPDG8RfaWlsCLSGBbaIc6EgncmCOSKAjOZVyI9XCplpYObDQJtLNTYSqhd3oxDmQqoUl8CvKgY7kJHCYfQ7MEQnswi5M1cJeBOp/4RRRDnQkG4FULeyGzoGJks0jHIpsBFI50A3lwERp7RHucrcmExLIGLs1nQT6hBF0a/4YVyoCY+jWzENgGa5b01Xg1GZDL6OqBlNjq6pB0NjmbDbcCCoRuOZk0vsW12TSa+YCypur3TUkBA7fJF4S2ObDw0oz6mvg6m3uMHSc0UJymWbHM+6Co/o9oeOMGpJLBLYInNPsthnAGatqs54LHZ8QQgghhBBCFMF5Acvdr5ceeeVqAAAAAElFTkSuQmCC" alt="literature"></a></li>
+            </ul>
+          </div>
         </div>
-
-
+      
         <div class="footer-bottom">
-            <p>&copy; 2024 Ferrenzza_Studios. Todos los derechos reservados.</p>
+          <p>&copy; 2024 Ferrenzza_Studios. Todos los derechos reservados.</p>
         </div>
-    </footer>
+      </footer>
 
     <script src="script.js"></script>
 </body>
