@@ -167,8 +167,6 @@ header {
     object-fit: cover;
 }
 
-<<<<<<< HEAD
-=======
 /*Login button*/
 .btn-2 {
     scale: 0.5;
@@ -219,7 +217,6 @@ header {
     border: none;
     cursor: pointer;
 }
->>>>>>> f8287880d78db089ca972b0826c0f099f82cf0e5
 
 
 .user-options a {
