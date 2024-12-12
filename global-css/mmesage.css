@@ -1,0 +1,38 @@
+.mensaje-container {
+    position: fixed;
+    top: 85px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    width: 80%;
+    max-width: 600px;
+}
+
+.mensaje {
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    font-size: 16px;
+    text-align: center;
+    animation: slideInFromRight 0.5s forwards;
+}
+
+.mensaje.exito {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.mensaje.error {
+    background-color: #f44336;
+    color: white;
+}
+
+
+@keyframes slideInFromRight {
+    0% {
+        top: 100%;
+    }
+    100% {
+        top: 82%;
+    }
+}

@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -11,17 +14,6 @@
 </head>
 <body>
     <header>
-
-      <button class="btn">
-        <span class="icon">
-            <svg viewBox="0 0 175 80" width="40" height="40">
-                <rect width="80" height="15" fill="#f0f0f0" rx="10"></rect>
-                <rect y="30" width="80" height="15" fill="#f0f0f0" rx="10"></rect>
-                <rect y="60" width="80" height="15" fill="#f0f0f0" rx="10"></rect>
-            </svg>
-        </span>
-        <span class="text">Ferrenzza_Studios</span>
-
       <button id="menu-toggle" class="menu-btn">
         <i class="fas fa-bars"></i>
 
@@ -30,10 +22,6 @@
         <nav class="nav-bar">
             <ul>
                 <li>
-
-                    <a href="#" class="logo">
-                        <img src="/imagenes/zzz.ico" alt="Logo">
-
                     <a href="index.html" class="logo">
                         <img src="/imagenes/LOGO.ico" alt="Logo">
 
@@ -45,8 +33,17 @@
             </ul>
         </nav>
     
-       
-
+        <div class="mensaje-container">
+                <?php
+                if (isset($_SESSION['mensaje'])) {
+                    $mensaje = $_SESSION['mensaje'];
+                    $tipo_mensaje = $_SESSION['tipo_mensaje'];
+                    echo "<div class='mensaje $tipo_mensaje'>$mensaje</div>";
+                    unset($_SESSION['mensaje']);
+                    unset($_SESSION['tipo_mensaje']);
+                }
+                ?>
+            </div>
 
 <div class="input-wrapper">
   <button class="icon">
@@ -190,12 +187,14 @@
             </div>
           </div>
       
-          <div class="footer-section">
+          <div class="footer-section help">
             <h3>Ayuda</h3>
             <ul>
-              <li><a href="#">Servicio al cliente</a></li>
-              <li><a href="#">Mi cuenta</a></li>
               <li><a href="#">Termino y condiciones</a></li>
+              <li><a href="#">Servicio al cliente</a></li>
+              <li><a href="#">Reclamos</a></li>
+              <li><a href="#">Mi cuenta</a></li>
+              
             </ul>
           </div>
       
@@ -206,6 +205,7 @@
                 <span class="tooltip">Facebook</span>
                 <span><i class="fab fa-facebook-f"></i></span>
               </li>
+
               <li class="icon instagram">
                 <span class="tooltip">Instagram</span>
                 <span><i class="fab fa-instagram"></i></span>

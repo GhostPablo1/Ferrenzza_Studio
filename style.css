@@ -12,13 +12,10 @@ body {
 header {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-<<<<<<< HEAD
     background-color: #141414;
     padding: 1rem 2rem;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     border-bottom: 1px solid #000000;
-=======
     background-color: #000000;
     padding: 0.5rem 2rem;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
@@ -26,7 +23,6 @@ header {
     position: sticky;
     top: 0;
     z-index: 10;
->>>>>>> f8287880d78db089ca972b0826c0f099f82cf0e5
 }
 
 /* Navigation Bar Styles */
@@ -64,9 +60,6 @@ header {
     
 }
 
-.nav-bar .link:hover {
-    color: #007bff;
-}
 
 .nav-bar .link::after {
     content: '';
@@ -75,7 +68,7 @@ header {
     height: 2px;
     bottom: 0;
     left: 0;
-    background-color: #007bff;
+    background-color: white;
     transform: scaleX(0);
     transition: transform 0.3s ease;
 }
@@ -85,7 +78,6 @@ header {
 }
 
 
-/* From Uiverse.io by ZAKARIAE48CHELLE */ 
 .input-wrapper {
     display: flex;
     align-items: center;
@@ -97,7 +89,7 @@ header {
   .input {
     border-style: none;
     height: 20px;
-    width: 5px;
+    width: 0px;
     padding: 15px;
     outline: none;
     border-radius: 50%;
@@ -125,7 +117,7 @@ header {
     align-items: center;
     justify-content: center;
     position: absolute;
-    right: 0px;
+    right: -4px;
     cursor: pointer;
     width: 50px;
     height: 50px;
@@ -240,7 +232,7 @@ header {
 /* From Uiverse.io by csemszepp */ 
 /* From Uiverse.io by kennyotsu */ 
 .container {
-    width: 100%;
+  width: 95%;
     height: 100%;
     /* Add your background pattern here */
     background-color: #ffffffd2;
@@ -377,6 +369,8 @@ main {
     background-color: #22c55e;
   }
   
+  
+
   .cards .card {
     display: flex;
     align-items: center;
@@ -395,26 +389,21 @@ main {
     font-size: 1em;
     font-weight: 700;
   }
-  
+
   .cards .card p.second-text {
     font-size: .7em;
   }
   
   .cards .card:hover {
-    transform: scale(1.1, 1.1);
+    transform: scale();
   }
   
   .cards:hover > .card:not(:hover) {
-    filter: blur(10px);
-    transform: scale(0.9, 0.9);
+    filter: blur(9px);
+    transform: scale(0.9);
   }
 
-
-
-
-
-
-
+  /*lo de abajo*/
   .card {
     width: 190px;
     height: 254px;
@@ -590,6 +579,12 @@ main {
 
 .footer-section a:hover {
     color: #ffffff;
+    text-decoration: underline;
+}
+
+.help a:hover {
+  color: #ffffff;
+  text-decoration: underline;
 }
 
 .footer-bottom {
