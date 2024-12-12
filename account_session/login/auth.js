@@ -34,5 +34,4 @@ document.addEventListener('DOMContentLoaded', function() {
             alert('Registro exitoso');
             window.location.href = 'login.html';
         });
-    }
-});
+}});

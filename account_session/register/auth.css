@@ -147,11 +147,19 @@ h2 {
     color: #fff;
 }
 
+.inputbox input:focus,
+.inputbox input:valid {
+    background-color: transparent;
+    border-bottom: none;
+}
+
 .inputbox input:focus ~ label,
 .inputbox input:valid ~ label {
     top: -10px;
     font-size: 0.8em;
     color: white;
+    background-color: transparent;
+    border-bottom: none;
 }
 
 .inputbox ion-icon {
@@ -166,6 +174,7 @@ h2 {
 .inputbox input:focus ~ ion-icon {
     color: #4db8ff;
 }
+
 
 .forget {
     display: flex;

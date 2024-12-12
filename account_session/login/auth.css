@@ -80,7 +80,9 @@ h2 {
 .inputbox input:valid ~ label {
     top: -10px;
     font-size: 0.8em;
-    color: #4db8ff;
+    color: white;
+    background-color: transparent;
+    border-bottom: none;
 }
 
 .inputbox ion-icon {
@@ -93,7 +95,7 @@ h2 {
 }
 
 .inputbox input:focus ~ ion-icon {
-    color: #4db8ff;
+    color: white;
 }
 
 .forget {
