@@ -17,8 +17,8 @@
 }
 
 .mensaje.error {
-    background-color: #ff6b6b; /* Rojo suave */
-    border-left: 5px solid #e63946; /* Rojo intenso */
+    background-color: #f00606;
+    border-left: 5px solid #fff9fa;
 }
 
 .mensaje.exito {

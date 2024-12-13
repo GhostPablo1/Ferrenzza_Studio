@@ -257,6 +257,21 @@ button:hover {
     margin-right: 5px;
 }
 
+/*eyes visible, on press password*/
+.password-toggle {
+    position: absolute;
+    right: 6px;
+    top: 8px;
+    cursor: pointer;
+    color: #888;
+    font-size: 18px;
+}
+
+.password-toggle i {
+    transition: color 0.3s ease;
+}
+
+
 /* Small screen responsiveness */
 @media screen and (max-width: 480px) {
     .form-box {

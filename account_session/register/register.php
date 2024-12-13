@@ -10,8 +10,9 @@ session_start();
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Registro - Mi Tienda</title>
   <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="auth.css">
+  <link rel="stylesheet" href="/css/register-auth.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   <link rel="stylesheet" href="/global-css/mmesage.css">
 </head>
 
@@ -62,15 +63,25 @@ session_start();
             <input type="email" name="email" required>
             <label for="">Correo Electrónico</label>
           </div>
+
           <div class="inputbox">
             <ion-icon name="lock-closed-outline"></ion-icon>
-            <input type="password" name="password" required>
+            <input type="password" name="password" id="password" required>
             <label for="">Contraseña</label>
+            <span class="password-toggle" id="password-toggle" onclick="togglePasswordVisibility('password')">
+              <i id="password-toggle-icon" class="fa fa-eye-slash"></i>
+            </span>
           </div>
+
           <div class="inputbox">
             <ion-icon name="lock-closed-outline"></ion-icon>
-            <input type="password" name="confirmar_password" required>
+            <input type="password" name="confirmar_password" id="confirm_password" required>
             <label for="">Confirmar contraseña</label>
+            <span class="password-toggle" id="confirm_password-toggle" onclick="togglePasswordVisibility('confirm_password')">
+              <i id="confirm_password-toggle-icon" class="fa fa-eye-slash"></i>
+            </span>
+
+
           </div>
           <div class="forget">
             <label>
@@ -85,20 +96,8 @@ session_start();
       </div>
     </div>
   </section>
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      var mensaje = document.querySelector('.mensaje');
-      if (mensaje) {
-        setTimeout(function() {
-          mensaje.style.opacity = '0';
-          setTimeout(function() {
-            mensaje.remove();
-          }, 500);
-        }, 3000);
-      }
-    });
-  </script>
-  <script src="/account_session/register/auth.js"></script>
+  <script src="auth.js"></script>
+
 </body>
 
 </html>

@@ -27,26 +27,26 @@ if ($accion == 'registrar') {
     }
 
     if ($con->isEmailRegistered($email)) {
-        $_SESSION['mensaje'] = "El correo ya se encuentra registrado.";
+        $_SESSION['mensaje'] = "El correo ya se encuentra registrado";
         $_SESSION['tipo_mensaje'] = "error";
     } else {
         // Validar si las contraseñas coinciden
         if ($password !== $confirm_password) {
-            $_SESSION['mensaje'] = "Las contraseñas no coinciden.";
+            $_SESSION['mensaje'] = "Las contraseñas no coinciden";
             $_SESSION['tipo_mensaje'] = "error";
         } else {
             // Validar la fortaleza de la contraseña
             if (strlen($password) < 8) {
-                $_SESSION['mensaje'] = "La contraseña debe tener al menos 8 caracteres.";
+                $_SESSION['mensaje'] = "La contraseña debe tener al menos 8 caracteres";
                 $_SESSION['tipo_mensaje'] = "error";
             } elseif (!preg_match('/[A-Z]/', $password)) {
-                $_SESSION['mensaje'] = "La contraseña debe tener al menos una letra mayúscula.";
+                $_SESSION['mensaje'] = "La contraseña debe tener al menos una letra mayúscula";
                 $_SESSION['tipo_mensaje'] = "error";
             } elseif (!preg_match('/\d/', $password)) {
-                $_SESSION['mensaje'] = "La contraseña debe tener al menos un número.";
+                $_SESSION['mensaje'] = "La contraseña debe tener al menos un número";
                 $_SESSION['tipo_mensaje'] = "error";
             } elseif (!preg_match('/[!@#$%^&*()\-_=+{}\[\]:;"\'<>,.?\/|\\\`~¡¿]/', $password)) {
-                $_SESSION['mensaje'] = "La contraseña debe tener al menos un carácter especial.";
+                $_SESSION['mensaje'] = "La contraseña debe tener al menos un carácter especial";
                 $_SESSION['tipo_mensaje'] = "error";
             
             } else {
@@ -69,7 +69,7 @@ if ($accion == 'registrar') {
                     unset($_SESSION['nombre']);
                     unset($_SESSION['email']);*/
                 } else {
-                    $_SESSION['mensaje'] = "Error al registrar usuario.";
+                    $_SESSION['mensaje'] = "Error al registrar usuario";
                     $_SESSION['tipo_mensaje'] = "error";
                 }
             }
