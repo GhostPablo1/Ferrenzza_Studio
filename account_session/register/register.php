@@ -72,6 +72,7 @@ session_start();
               <i id="password-toggle-icon" class="fa fa-eye-slash"></i>
             </span>
           </div>
+          <div class="validation-message" id="password-validation"></div>
 
           <div class="inputbox">
             <ion-icon name="lock-closed-outline"></ion-icon>
@@ -80,9 +81,9 @@ session_start();
             <span class="password-toggle" id="confirm_password-toggle" onclick="togglePasswordVisibility('confirm_password')">
               <i id="confirm_password-toggle-icon" class="fa fa-eye-slash"></i>
             </span>
-
-
           </div>
+          <div class="validation-message" id="confirm_password-validation"></div>
+
           <div class="forget">
             <label>
           </div>
@@ -97,7 +98,6 @@ session_start();
     </div>
   </section>
   <script src="auth.js"></script>
-
 </body>
 
 </html>

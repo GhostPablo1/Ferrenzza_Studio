@@ -53,6 +53,38 @@
             setTimeout(function() {
               mensaje.remove();
             }, 500);
-          }, 3000);
+          }, 4000);
         }
       });
+
+    //valided password
+    const passwordInput = document.getElementById('password');
+    const validationMessage = document.getElementById('password-validation');
+
+    const conditions = [
+      { regex: /.{8,}/, message: 'Debe tener al menos 8 caracteres' },
+      { regex: /[A-Z]/, message: 'Debe incluir al menos una letra mayúscula' },
+      { regex: /[0-9]/, message: 'Debe incluir al menos un número' },
+      { regex: /[!@#$%^&*()\-_=+{}\[\]:;"\'<>,.?\/|\\\`~¡¿]/, message: 'Debe incluir al menos un carácter especial' }
+    ];
+
+    passwordInput.addEventListener('input', () => {
+      const password = passwordInput.value;
+
+      if (!password) {
+        validationMessage.classList.remove('show');
+        return;
+      }
+
+      const unmetCondition = conditions.find(cond => !cond.regex.test(password));
+
+      if (unmetCondition) {
+        validationMessage.innerHTML = unmetCondition.message;
+        validationMessage.classList.remove('valid');
+      } else {
+        validationMessage.innerHTML = 'Contraseña válida';
+        validationMessage.classList.add('valid');
+      }
+
+      validationMessage.classList.add('show');
+    });

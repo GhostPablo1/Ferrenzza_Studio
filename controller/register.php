@@ -29,27 +29,7 @@ if ($accion == 'registrar') {
     if ($con->isEmailRegistered($email)) {
         $_SESSION['mensaje'] = "El correo ya se encuentra registrado";
         $_SESSION['tipo_mensaje'] = "error";
-    } else {
-        // Validar si las contraseñas coinciden
-        if ($password !== $confirm_password) {
-            $_SESSION['mensaje'] = "Las contraseñas no coinciden";
-            $_SESSION['tipo_mensaje'] = "error";
-        } else {
-            // Validar la fortaleza de la contraseña
-            if (strlen($password) < 8) {
-                $_SESSION['mensaje'] = "La contraseña debe tener al menos 8 caracteres";
-                $_SESSION['tipo_mensaje'] = "error";
-            } elseif (!preg_match('/[A-Z]/', $password)) {
-                $_SESSION['mensaje'] = "La contraseña debe tener al menos una letra mayúscula";
-                $_SESSION['tipo_mensaje'] = "error";
-            } elseif (!preg_match('/\d/', $password)) {
-                $_SESSION['mensaje'] = "La contraseña debe tener al menos un número";
-                $_SESSION['tipo_mensaje'] = "error";
-            } elseif (!preg_match('/[!@#$%^&*()\-_=+{}\[\]:;"\'<>,.?\/|\\\`~¡¿]/', $password)) {
-                $_SESSION['mensaje'] = "La contraseña debe tener al menos un carácter especial";
-                $_SESSION['tipo_mensaje'] = "error";
-            
-            } else {
+
                 // Registrar usuario
                 $registro_exitoso = $con->registerUser($name, $last ,$email, $contrasena);
                 if ($registro_exitoso === true) {
@@ -73,10 +53,7 @@ if ($accion == 'registrar') {
                     $_SESSION['tipo_mensaje'] = "error";
                 }
             }
+               header("Location: /account_session/register/register.php");
+                exit(); 
         }
-    }
-
-    header("Location: /account_session/register/register.php");
-    exit();
-}
 ?>

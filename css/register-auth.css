@@ -120,7 +120,7 @@ h2 {
 
 .inputbox {
     position: relative;
-    margin: 30px 0;
+    margin: 40px 0;
     width: 100%;    
     border-bottom: 2px solid rgba(255, 255, 255, 0.5);
 }
@@ -174,7 +174,6 @@ h2 {
 .inputbox input:focus ~ ion-icon {
     color: #4db8ff;
 }
-
 
 .forget {
     display: flex;
