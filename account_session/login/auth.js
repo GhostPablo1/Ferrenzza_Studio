@@ -1,37 +1,50 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const loginForm = document.getElementById('loginForm');
-    const registerForm = document.getElementById('registerForm');
-
-    if (loginForm) {
-        loginForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            const email = document.getElementById('email').value;
-            const password = document.getElementById('password').value;
-
-            // Aquí iría la lógica de autenticación
-            console.log('Iniciando sesión:', { email, password });
-            alert('Inicio de sesión exitoso');
-            window.location.href = 'index.html';
-        });
+    var mensaje = document.querySelector('.mensaje');
+    if (mensaje) {
+      setTimeout(function() {
+        mensaje.style.opacity = '0';
+        setTimeout(function() {
+          mensaje.remove();
+        }, 500);
+      }, 4000);
     }
+  });
 
-    if (registerForm) {
-        registerForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            const name = document.getElementById('name').value;
-            const dni = document.getElementById('dni').value;
-            const email = document.getElementById('email').value;
-            const password = document.getElementById('password').value;
-            const confirmPassword = document.getElementById('confirmPassword').value;
 
-            if (password !== confirmPassword) {
-                alert('Las contraseñas no coinciden');
-                return;
-            }
+  document.addEventListener('DOMContentLoaded', function() {
+    var contrasenaInput = document.getElementById('password');
+    var contrasenaToggle = document.getElementById('password-toggle');
 
-            // Aquí iría la lógica de registro
-            console.log('Registrando usuario:', { name, dni, email, password });
-            alert('Registro exitoso');
-            window.location.href = 'login.html';
-        });
-}});
+    contrasenaInput.addEventListener('input', function() {
+        togglePasswordIconVisibility(contrasenaInput.value, contrasenaToggle);
+    });
+
+    togglePasswordIconVisibility(contrasenaInput.value, contrasenaToggle);
+});
+
+function togglePasswordIconVisibility(value, icon) {
+    if (icon) {
+        if (value.length > 0) {
+            icon.style.display = 'inline-block';
+        } else {
+            icon.style.display = 'none';
+        }
+    }
+}
+
+function togglePasswordVisibility(fieldId) {
+    var field = document.getElementById(fieldId);
+    var icon = document.getElementById(fieldId + '-toggle-icon');
+    
+    if (field && icon) {
+        if (field.type === "password") {
+            field.type = "text";
+            icon.classList.remove('fa-eye-slash');
+            icon.classList.add('fa-eye');
+        } else {
+            field.type = "password";
+            icon.classList.remove('fa-eye');
+            icon.classList.add('fa-eye-slash');
+        }
+    }
+}

@@ -85,3 +85,14 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });    
 
+document.addEventListener('DOMContentLoaded', function() {
+    var mensaje = document.querySelector('.mensaje');
+    if (mensaje) {
+      setTimeout(function() {
+        mensaje.style.opacity = '0';
+        setTimeout(function() {
+          mensaje.remove();
+        }, 500);
+      }, 4000);
+    }
+  });

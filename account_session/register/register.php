@@ -1,5 +1,8 @@
 <?php
-session_start();
+
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
 
 ?>
 <!DOCTYPE html>
@@ -83,15 +86,17 @@ session_start();
             </span>
           </div>
           <div class="validation-message" id="confirm_password-validation"></div>
+          <style>
 
+          </style>
           <div class="forget">
             <label>
           </div>
           <button>Registrate</button>
           <div class="register">
             <span>¿Ya tienes cuenta?</span>
-            <a href="/account_session/login/login.html" class="small-link">Iniciar Sesión</a>
-            <a href="/index.html" class="back-link"><i class="fas fa-arrow-left"></i> Volver a la tienda</a>
+            <a href="/account_session/login/login.php" class="small-link">Iniciar Sesión</a>
+            <a href="/index.php" class="back-link"><i class="fas fa-arrow-left"></i> Volver a la tienda</a>
           </div>
         </form>
       </div>

@@ -13,7 +13,6 @@
             togglePasswordIconVisibility(confirmContrasenaInput.value, confirmContrasenaToggle);
         });
     
-        // Ocultar los íconos al cargar la página si los campos están vacíos inicialmente
         togglePasswordIconVisibility(contrasenaInput.value, contrasenaToggle);
         togglePasswordIconVisibility(confirmContrasenaInput.value, confirmContrasenaToggle);
     });
@@ -57,34 +56,71 @@
         }
       });
 
-    //valided password
-    const passwordInput = document.getElementById('password');
-    const validationMessage = document.getElementById('password-validation');
+const passwordInput = document.getElementById('password');
+const validationMessage = document.getElementById('password-validation');
+const confirmPasswordInput = document.getElementById('confirm_password');
+const confirmValidationMessage = document.getElementById('confirm_password-validation');
 
-    const conditions = [
-      { regex: /.{8,}/, message: 'Debe tener al menos 8 caracteres' },
-      { regex: /[A-Z]/, message: 'Debe incluir al menos una letra mayúscula' },
-      { regex: /[0-9]/, message: 'Debe incluir al menos un número' },
-      { regex: /[!@#$%^&*()\-_=+{}\[\]:;"\'<>,.?\/|\\\`~¡¿]/, message: 'Debe incluir al menos un carácter especial' }
-    ];
+const conditions = [
+  { regex: /.{8,}/, message: 'Debe tener al menos 8 caracteres' },
+  { regex: /[A-Z]/, message: 'Debe incluir al menos una letra mayúscula' },
+  { regex: /[0-9]/, message: 'Debe incluir al menos un número' },
+  { regex: /[!@#$%^&*()\-_=+{}\[\]:;"\'<>,.?\/|\\\`~¡¿]/, message: 'Debe incluir al menos un carácter especial' }
+];
 
-    passwordInput.addEventListener('input', () => {
-      const password = passwordInput.value;
+function validatePassword() {
+  const password = passwordInput.value;
 
-      if (!password) {
-        validationMessage.classList.remove('show');
-        return;
-      }
+  if (!password) {
+    validationMessage.textContent = '';
+    validationMessage.classList.remove('show', 'valid');
+    return;
+  }
 
-      const unmetCondition = conditions.find(cond => !cond.regex.test(password));
+  const unmetCondition = conditions.find(cond => !cond.regex.test(password));
 
-      if (unmetCondition) {
-        validationMessage.innerHTML = unmetCondition.message;
-        validationMessage.classList.remove('valid');
-      } else {
-        validationMessage.innerHTML = 'Contraseña válida';
-        validationMessage.classList.add('valid');
-      }
+  if (unmetCondition) {
+    validationMessage.textContent = unmetCondition.message;
+    validationMessage.classList.add('show');
+    validationMessage.classList.remove('valid');
+    passwordInput.classList.add('invalid');
+    passwordInput.classList.remove('valid');
+  } else {
+    validationMessage.textContent = '✔ Contraseña válida';
+    validationMessage.classList.add('valid', 'show');
+    passwordInput.classList.add('valid');
+    passwordInput.classList.remove('invalid');
+    validateConfirmPassword();
+  }
+}
 
-      validationMessage.classList.add('show');
-    });
+function validateConfirmPassword() {
+  const password = passwordInput.value;
+  const confirmPassword = confirmPasswordInput.value;
+
+  if (!confirmPassword) {
+    confirmValidationMessage.textContent = '';
+    confirmValidationMessage.classList.remove('valid', 'show');
+    confirmPasswordInput.classList.remove('valid', 'invalid');
+    return;
+  }
+
+  if (password !== confirmPassword) {
+    confirmValidationMessage.textContent = 'Las contraseñas no coinciden';
+    confirmValidationMessage.classList.add('show');
+    confirmValidationMessage.classList.remove('valid');
+    confirmPasswordInput.classList.add('invalid');
+    confirmPasswordInput.classList.remove('valid');
+  } else {
+    confirmValidationMessage.textContent = '✔ Las contraseñas coinciden';
+    confirmValidationMessage.classList.add('valid', 'show');
+    confirmPasswordInput.classList.add('valid');
+    confirmPasswordInput.classList.remove('invalid');
+
+    if (passwordInput.classList.contains('valid')) {
+    }
+  }
+}
+
+passwordInput.addEventListener('input', validatePassword);
+confirmPasswordInput.addEventListener('input', validateConfirmPassword);
