@@ -1,6 +1,6 @@
 <?php
 if (session_status() === PHP_SESSION_NONE) {
-    session_start();
+  session_start();
 }
 ?>
 <?php
@@ -10,7 +10,7 @@ $con = new Conexion();
 $name = '';
 //var_dump($name);
 if (isset($_SESSION['user_id'])) {
-    $name = $con->getNombreByUserId($_SESSION['user_id']); 
+  $name = $con->getNombreByUserId($_SESSION['user_id']);
 }
 
 ?>
@@ -49,13 +49,6 @@ if (isset($_SESSION['user_id'])) {
         <li><a href="#" class="link">Productos</a></li>
         <li><a href="#" class="link">Promos</a></li>
         <li><a href="#" class="link">Proximamente</a></li>
-        <li">
-        <a href="#" class="usuario-toggle">
-                        <?php if (isset($_SESSION['user_nombre'])) : ?>
-                        <span class="usuario-nombre"><?php echo $name['nombres'] ?></span>
-                        <?php endif; ?>
-                    </a>         
-                </li>
       </ul>
     </nav>
 
@@ -102,14 +95,35 @@ if (isset($_SESSION['user_id'])) {
     </div>
 
     <div class="user-options">
-      <a href="/account_session/login/login.php" class="login">
-        <button class="btn-2">Login</button>
-      </a>
+          <a class="usuario-nombre">
+            <?php if (isset($_SESSION['user_nombre'])) : ?><span><?php echo $name['nombres'] ?></span>
+          </a>
+
+            <div class="dropdown">
+              <a class="login">
+              <button class="btn-2" id="accountToggle">
+                Mi Cuenta
+            </button>
+           </a>
+
+            <div class="dropdown-menu" id="dropdownMenu">
+                <a href="/restaurante_Cevicheria/Principal_admin/index.php" class="dropdown-item">Mi Cuenta</a>
+                <?php if (isset($_SESSION['user_rol_id']) && $_SESSION['user_rol_id'] == 1) : ?>
+                <a class="dropdown-item" href="/restaurante_Cevicheria/Principal_admin/index.php">Admin</a>
+                <?php endif; ?>
+                <a href="/controller/logout-session.php" class="dropdown-item">Salir</a>
+            </div>
+
+        </div>
+        
+        <?php else : ?>
+        <a href="/account_session/login/login.php" class="login">
+            <button class="btn-2">Login</button>
+        </a>
+            <?php endif; ?>
+          </a>
     </div>
-
-
   </header>
-
 
   <!-- Modal de imagenes de productos -->
   <main class="container">

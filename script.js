@@ -96,3 +96,39 @@ document.addEventListener('DOMContentLoaded', function() {
       }, 4000);
     }
   });
+
+//drop
+  document.addEventListener('DOMContentLoaded', function() {
+    const accountToggle = document.getElementById('accountToggle');
+    const dropdownMenu = document.getElementById('dropdownMenu');
+    let isDropdownOpen = false;
+    
+    accountToggle.addEventListener('click', function(event) {
+        event.stopPropagation();
+        
+        if (!isDropdownOpen) {
+            dropdownMenu.style.display = 'block';
+            dropdownMenu.style.opacity = '1';
+            dropdownMenu.style.transform = 'translateY(0)';
+            isDropdownOpen = true;
+        } else {
+            dropdownMenu.style.display = 'none';
+            dropdownMenu.style.opacity = '0';
+            dropdownMenu.style.transform = 'translateY(-10px)';
+            isDropdownOpen = false;
+        }
+    });
+
+    document.addEventListener('click', function() {
+        if (isDropdownOpen) {
+            dropdownMenu.style.display = 'none';
+            dropdownMenu.style.opacity = '0';
+            dropdownMenu.style.transform = 'translateY(-10px)';
+            isDropdownOpen = false;
+        }
+    });
+
+    dropdownMenu.addEventListener('click', function(event) {
+        event.stopPropagation();
+    });
+});
