@@ -139,6 +139,7 @@ header {
 /* User Options Styles */
 .user-options {
     display: flex;
+    gap: 77px;
     align-items: center;
 }
 
@@ -210,7 +211,6 @@ header {
 .user-options a {
     margin-left: 1rem;
     text-decoration: none;
-    color: purple;
 }
 /* Botón de Menú */
 
@@ -224,7 +224,6 @@ header {
 .container {
   width: 95%;
     height: 100%;
-    /* Add your background pattern here */
     background-color: #ffffffd2;
     background-image: radial-gradient(rgba(255, 255, 255, 0.171) 2px, transparent 0);
     background-size: 30px 30px;
@@ -733,8 +732,54 @@ main {
     .usuario-nombre {
       color: white;
       text-decoration: underline;
-      margin-left: 10px;
       font-size: 14px;
+      font-weight: bold;
       text-transform: uppercase;
   }
-      
+
+  .dropdown {
+    display: inline-block;
+  }
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 23px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    min-width: 160px;
+    opacity: 0;
+    z-index: 999;
+    font-size: 14px;
+}
+
+.dropdown-item {
+  font-family: HMRegular, sans-serif;
+    padding: 10px 15px;
+    color: #333;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.3s ease;
+}
+
+.dropdown-item:hover {
+    background-color: #f1f1f1;
+}
+
+/* Estilo para la flecha del dropdown */
+.dropdown-menu::before {
+  content: "";
+  position: absolute;
+  top: -20px;
+  right: 28px;
+  border-width: 10px;
+  border-style: solid;
+  border-color: transparent transparent white transparent;
+}
+
+.dropdown-menu.show {
+  display: block;
+}

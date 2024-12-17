@@ -1,6 +1,6 @@
 <?php
 if (session_status() === PHP_SESSION_NONE) {
-    session_start();
+  session_start();
 }
 ?>
 <?php
@@ -10,7 +10,7 @@ $con = new Conexion();
 $name = '';
 //var_dump($name);
 if (isset($_SESSION['user_id'])) {
-    $name = $con->getNombreByUserId($_SESSION['user_id']); 
+  $name = $con->getNombreByUserId($_SESSION['user_id']);
 }
 
 ?>
@@ -49,6 +49,7 @@ if (isset($_SESSION['user_id'])) {
         <li><a href="#" class="link">Productos</a></li>
         <li><a href="#" class="link">Promos</a></li>
         <li><a href="#" class="link">Proximamente</a></li>
+<<<<<<< HEAD
         <li">
           <a href="#" class="usuario-toggle">
                         <?php if (isset($_SESSION['user_nombre'])) : ?>
@@ -56,6 +57,8 @@ if (isset($_SESSION['user_id'])) {
                         <?php endif; ?>
           </a>         
         </li>
+=======
+>>>>>>> 19c54216f265ad950d92904ec701664ffd869bd3
       </ul>
 
         <div class="input-wrapper">
@@ -107,6 +110,7 @@ if (isset($_SESSION['user_id'])) {
       ?>
     </div>
 
+<<<<<<< HEAD
    
 
 
@@ -114,6 +118,65 @@ if (isset($_SESSION['user_id'])) {
 
 
   <!-- Parte principal -->
+=======
+    <div class="input-wrapper">
+      <button class="icon">
+        <svg
+          width="25px"
+          height="25px"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M11.5 21C16.7467 21 21 16.7467 21 11.5C21 6.25329 16.7467 2 11.5 2C6.25329 2 2 6.25329 2 11.5C2 16.7467 6.25329 21 11.5 21Z"
+            stroke="#fff"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"></path>
+          <path
+            d="M22 22L20 20"
+            stroke="#fff"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"></path>
+        </svg>
+      </button>
+      <input type="text" name="text" class="input" placeholder="search.." />
+    </div>
+
+    <div class="user-options">
+          <a class="usuario-nombre">
+            <?php if (isset($_SESSION['user_nombre'])) : ?><span><?php echo $name['nombres'] ?></span>
+          </a>
+
+            <div class="dropdown">
+              <a class="login">
+              <button class="btn-2" id="accountToggle">
+                Mi Cuenta
+            </button>
+           </a>
+
+            <div class="dropdown-menu" id="dropdownMenu">
+                <a href="/restaurante_Cevicheria/Principal_admin/index.php" class="dropdown-item">Mi Cuenta</a>
+                <?php if (isset($_SESSION['user_rol_id']) && $_SESSION['user_rol_id'] == 1) : ?>
+                <a class="dropdown-item" href="/restaurante_Cevicheria/Principal_admin/index.php">Admin</a>
+                <?php endif; ?>
+                <a href="/controller/logout-session.php" class="dropdown-item">Salir</a>
+            </div>
+
+        </div>
+        
+        <?php else : ?>
+        <a href="/account_session/login/login.php" class="login">
+            <button class="btn-2">Login</button>
+        </a>
+            <?php endif; ?>
+          </a>
+    </div>
+  </header>
+
+  <!-- Modal de imagenes de productos -->
+>>>>>>> 19c54216f265ad950d92904ec701664ffd869bd3
   <main class="container">
     <section class="product-carousel">
       <div class="carousel-container">
