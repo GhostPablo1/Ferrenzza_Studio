@@ -96,7 +96,7 @@ document.addEventListener('DOMContentLoaded', function() {
       }, 4000);
     }
   });
-
+  
 //drop
   document.addEventListener('DOMContentLoaded', function() {
     const accountToggle = document.getElementById('accountToggle');

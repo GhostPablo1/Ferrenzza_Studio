@@ -35,13 +35,12 @@ if (isset($_SESSION['user_id'])) {
   <header>
     <button id="menu-toggle" class="menu-btn">
       <i class="fas fa-bars"></i>
-
     </button>
 
     <nav class="nav-bar">
       <ul>
         <li>
-          <a href="index.html" class="logo">
+          <a href="index.php" class="logo">
             <img src="/imagenes/LOGO.ico" alt="Logo">
 
           </a>
@@ -49,16 +48,6 @@ if (isset($_SESSION['user_id'])) {
         <li><a href="#" class="link">Productos</a></li>
         <li><a href="#" class="link">Promos</a></li>
         <li><a href="#" class="link">Proximamente</a></li>
-
-        <li">
-          <a href="#" class="usuario-toggle">
-                        <?php if (isset($_SESSION['user_nombre'])) : ?>
-                        <span class="usuario-nombre"><?php echo $name['nombres'] ?></span>
-                        <?php endif; ?>
-          </a>         
-        </li>
-
-
       </ul>
 
         <div class="input-wrapper">
@@ -84,14 +73,36 @@ if (isset($_SESSION['user_id'])) {
           </svg>
         </button>
         <input type="text" name="text" class="input" placeholder="search.." />
-      </div>
-
-      <div class="user-options">
-        <a href="/account_session/login/login.php" class="login">
-          <button class="btn-2">Login</button>
-        </a>
-      </div>
+      </div>  
     </nav>
+    
+    <div class="user-options">
+    <a class="usuario-nombre">
+            <?php if (isset($_SESSION['user_nombre'])) : ?><span><?php echo $name['nombres'] ?></span>
+          </a>
+          <div class="dropdown">
+              <a class="login">
+              <button class="btn-2" id="accountToggle">
+                <img class="user-icon" src="/imagenes/user-2.png">
+            </button>
+           </a>
+           <div class="dropdown-menu" id="dropdownMenu">
+                <a href="/restaurante_Cevicheria/Principal_admin/index.php" class="dropdown-item">Mi Cuenta</a>
+                <?php if (isset($_SESSION['user_rol_id']) && $_SESSION['user_rol_id'] == 1) : ?>
+                <a class="dropdown-item" href="/restaurante_Cevicheria/Principal_admin/index.php">Admin</a>
+                <?php endif; ?>
+                <a href="/controller/logout-session.php" class="dropdown-item">Salir</a>
+            </div>
+            </div>
+        <?php else : ?>
+        <a href="/account_session/login/login.php" class="login">
+            <button class="btn-2">Login</button>
+        </a>
+            <?php endif; ?>
+          </a>
+    </div>
+</div>
+  </header>
 
     <div class="mensaje-container">
       <?php
@@ -109,13 +120,6 @@ if (isset($_SESSION['user_id'])) {
       }
       ?>
     </div>
-
-  </header>
-
-
-  <!-- Parte principal -->
-
-
 
     <!-- Modal de imagenes de productos -->
   <main class="container">

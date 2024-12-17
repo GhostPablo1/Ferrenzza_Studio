@@ -44,7 +44,7 @@ $_SESSION['user_email'] = $email;
         $rol_id = $con->getUserRole($email);
 
         if ($rol_id == 1) {
-            header("Location: /index.php");
+            header("Location: ../admin/index.php");
         } else {
             header("Location: /index.php");
         }
