@@ -50,13 +50,44 @@ if (isset($_SESSION['user_id'])) {
         <li><a href="#" class="link">Promos</a></li>
         <li><a href="#" class="link">Proximamente</a></li>
         <li">
-        <a href="#" class="usuario-toggle">
+          <a href="#" class="usuario-toggle">
                         <?php if (isset($_SESSION['user_nombre'])) : ?>
                         <span class="usuario-nombre"><?php echo $name['nombres'] ?></span>
                         <?php endif; ?>
-                    </a>         
-                </li>
+          </a>         
+        </li>
       </ul>
+
+        <div class="input-wrapper">
+        <button class="icon">
+          <svg
+            width="25px"
+            height="25px"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M11.5 21C16.7467 21 21 16.7467 21 11.5C21 6.25329 16.7467 2 11.5 2C6.25329 2 2 6.25329 2 11.5C2 16.7467 6.25329 21 11.5 21Z"
+              stroke="#fff"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"></path>
+            <path
+              d="M22 22L20 20"
+              stroke="#fff"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"></path>
+          </svg>
+        </button>
+        <input type="text" name="text" class="input" placeholder="search.." />
+      </div>
+
+      <div class="user-options">
+        <a href="/account_session/login/login.php" class="login">
+          <button class="btn-2">Login</button>
+        </a>
+      </div>
     </nav>
 
     <div class="mensaje-container">
@@ -76,42 +107,13 @@ if (isset($_SESSION['user_id'])) {
       ?>
     </div>
 
-    <div class="input-wrapper">
-      <button class="icon">
-        <svg
-          width="25px"
-          height="25px"
-          viewBox="0 0 24 24"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg">
-          <path
-            d="M11.5 21C16.7467 21 21 16.7467 21 11.5C21 6.25329 16.7467 2 11.5 2C6.25329 2 2 6.25329 2 11.5C2 16.7467 6.25329 21 11.5 21Z"
-            stroke="#fff"
-            stroke-width="1.5"
-            stroke-linecap="round"
-            stroke-linejoin="round"></path>
-          <path
-            d="M22 22L20 20"
-            stroke="#fff"
-            stroke-width="1.5"
-            stroke-linecap="round"
-            stroke-linejoin="round"></path>
-        </svg>
-      </button>
-      <input type="text" name="text" class="input" placeholder="search.." />
-    </div>
-
-    <div class="user-options">
-      <a href="/account_session/login/login.php" class="login">
-        <button class="btn-2">Login</button>
-      </a>
-    </div>
+   
 
 
   </header>
 
 
-  <!-- Modal de imagenes de productos -->
+  <!-- Parte principal -->
   <main class="container">
     <section class="product-carousel">
       <div class="carousel-container">
@@ -154,51 +156,25 @@ if (isset($_SESSION['user_id'])) {
       </div>
     </div>
 
-    <div class="card">
-      <div class="card-img"><img src="/imagenes/polo4.jpeg" alt=""></div>
-      <div class="card-info">
-        <p class="text-title">Product title </p>
-        <p class="text-body">Product description and details</p>
-      </div>
-      <div class="card-footer">
-        <span class="text-title">$499.49</span>
-        <div class="card-button">
-          <svg class="svg-icon" viewBox="0 0 20 20">
-            <path d="M17.72,5.011H8.026c-0.271,0-0.49,0.219-0.49,0.489c0,0.271,0.219,0.489,0.49,0.489h8.962l-1.979,4.773H6.763L4.935,5.343C4.926,5.316,4.897,5.309,4.884,5.286c-0.011-0.024,0-0.051-0.017-0.074C4.833,5.166,4.025,4.081,2.33,3.908C2.068,3.883,1.822,4.075,1.795,4.344C1.767,4.612,1.962,4.853,2.231,4.88c1.143,0.118,1.703,0.738,1.808,0.866l1.91,5.661c0.066,0.199,0.252,0.333,0.463,0.333h8.924c0.116,0,0.22-0.053,0.308-0.128c0.027-0.023,0.042-0.048,0.063-0.076c0.026-0.034,0.063-0.058,0.08-0.099l2.384-5.75c0.062-0.151,0.046-0.323-0.045-0.458C18.036,5.092,17.883,5.011,17.72,5.011z"></path>
-            <path d="M8.251,12.386c-1.023,0-1.856,0.834-1.856,1.856s0.833,1.853,1.856,1.853c1.021,0,1.853-0.83,1.853-1.853S9.273,12.386,8.251,12.386z M8.251,15.116c-0.484,0-0.877-0.393-0.877-0.874c0-0.484,0.394-0.878,0.877-0.878c0.482,0,0.875,0.394,0.875,0.878C9.126,14.724,8.733,15.116,8.251,15.116z"></path>
-            <path d="M13.972,12.386c-1.022,0-1.855,0.834-1.855,1.856s0.833,1.853,1.855,1.853s1.854-0.83,1.854-1.853S14.994,12.386,13.972,12.386z M13.972,15.116c-0.484,0-0.878-0.393-0.878-0.874c0-0.484,0.394-0.878,0.878-0.878c0.482,0,0.875,0.394,0.875,0.878C14.847,14.724,14.454,15.116,13.972,15.116z"></path>
-          </svg>
-        </div>
-      </div>
+    <div class="chart">
+          <div class="chart-img"><img src="/imagenes/polo4.jpeg" alt=""></div>
+          <div class="chart-info">
+            <p class="text-title">Product title </p>
+            <p class="text-body">Product description and details</p>
+          </div>
+          <div class="chart-footer">
+            <span class="text-title">$499.49</span>
+            <div class="chart-button">
+              <svg class="svg-icon" viewBox="0 0 20 20">
+                <path d="M17.72,5.011H8.026c-0.271,0-0.49,0.219-0.49,0.489c0,0.271,0.219,0.489,0.49,0.489h8.962l-1.979,4.773H6.763L4.935,5.343C4.926,5.316,4.897,5.309,4.884,5.286c-0.011-0.024,0-0.051-0.017-0.074C4.833,5.166,4.025,4.081,2.33,3.908C2.068,3.883,1.822,4.075,1.795,4.344C1.767,4.612,1.962,4.853,2.231,4.88c1.143,0.118,1.703,0.738,1.808,0.866l1.91,5.661c0.066,0.199,0.252,0.333,0.463,0.333h8.924c0.116,0,0.22-0.053,0.308-0.128c0.027-0.023,0.042-0.048,0.063-0.076c0.026-0.034,0.063-0.058,0.08-0.099l2.384-5.75c0.062-0.151,0.046-0.323-0.045-0.458C18.036,5.092,17.883,5.011,17.72,5.011z"></path>
+                <path d="M8.251,12.386c-1.023,0-1.856,0.834-1.856,1.856s0.833,1.853,1.856,1.853c1.021,0,1.853-0.83,1.853-1.853S9.273,12.386,8.251,12.386z M8.251,15.116c-0.484,0-0.877-0.393-0.877-0.874c0-0.484,0.394-0.878,0.877-0.878c0.482,0,0.875,0.394,0.875,0.878C9.126,14.724,8.733,15.116,8.251,15.116z"></path>
+                <path d="M13.972,12.386c-1.022,0-1.855,0.834-1.855,1.856s0.833,1.853,1.855,1.853s1.854-0.83,1.854-1.853S14.994,12.386,13.972,12.386z M13.972,15.116c-0.484,0-0.878-0.393-0.878-0.874c0-0.484,0.394-0.878,0.878-0.878c0.482,0,0.875,0.394,0.875,0.878C14.847,14.724,14.454,15.116,13.972,15.116z"></path>
+              </svg>
+            </div>
+          </div>
     </div>
-
   </main>
-
-
-
-  <!-- Modal de Menú -->
-  <div id="modal-menu" class="modal">
-    <div class="modal-content">
-      <button id="modal-close" class="modal-close">&times;</button>
-      <div class="modal-options">
-        <h2>Nuestra Redes</h2>
-        <div class="social-links">
-          <a href="#" target="_blank" class="social-link facebook">
-            <i class="fab fa-facebook"></i> Facebook
-          </a>
-          <a href="https://www.instagram.com/ferrenzza_studios/" target="_blank" class="social-link instagram">
-            <i class="fab fa-instagram"></i> Instagram
-          </a>
-          <a href="#" target="_blank" class="social-link tiktok">
-            <i class="fab fa-tiktok"></i> TikTok
-          </a>
-        </div>
-        <a href="#about" class="modal-link">Sobre Nosotros</a>
-        <a href="#location" class="modal-link">Ubícanos</a>
-      </div>
-    </div>
-  </div>
-
+<!-- Parte inferior de la página -->
   <footer class="footer">
     <div class="footer-content">
       <div class="footer-section">
@@ -229,16 +205,16 @@ if (isset($_SESSION['user_id'])) {
       <div class="footer-section">
         <h3>Contactos</h3>
         <ul class="wrapper">
-          <li class="icon facebook">
+          <li class="icono facebook">
             <span class="tooltip">Facebook</span>
             <span><i class="fab fa-facebook-f"></i></span>
           </li>
 
-          <li class="icon instagram">
+          <li class="icono instagram">
             <span class="tooltip">Instagram</span>
             <span><i class="fab fa-instagram"></i></span>
           </li>
-          <li class="icon tiktok">
+          <li class="icono tiktok">
             <span class="tooltip">Tik Tok</span>
             <span><i class="fab fa-tiktok"></i></span>
           </li>
